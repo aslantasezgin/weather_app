@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className='weather'>
       <div className='search'>
         <input placeholder="Search a City..." type="text" onChange={(event) => {
           getCity(event)
@@ -32,9 +33,10 @@ function App() {
         }}>search</button>
       </div>
 
-        {weatherData.map((item, index) => (<WeatherResult date={item.date} min_temp={item.day.mintemp_c} max_temp={item.day.mintemp_c} condition={item.day.condition.text} icon={item.day.condition.icon} key={index} ></WeatherResult>) )}
+        {weatherData.map((item, index) => (<WeatherResult date={item.date} min_temp={item.day.mintemp_c} max_temp={item.day.maxtemp_c} condition={item.day.condition.text} icon={item.day.condition.icon} key={index} ></WeatherResult>) )}
 
    
+    </div>
     </div>
   );
 }

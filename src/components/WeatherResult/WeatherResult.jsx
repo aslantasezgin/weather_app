@@ -4,11 +4,11 @@ import './WeatherResult.css'
 function WeatherResult(props) {
   return (
     <div className='result'>
-        <h2>{props.date}</h2>
+        <h2>Tarih:  <span> {props.date} </span></h2>
         <ul>
-            <li><img src={props.icon}></img></li>
-            <li>{props.condition} </li>
-            <li>{props.min_temp} / {props.max_temp}</li>
+            <li className='result-img'><img src={props.icon}></img></li>
+            <li className='result-title'>{props.condition} </li>
+            <li className='temp'> {props.min_temp}° / {props.max_temp}°</li>
         </ul>
     </div>
   )
