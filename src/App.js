@@ -15,7 +15,17 @@ function App() {
 
 
   const getData = (cityInput) => {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${cityInput}&days=3&aqi=no&alerts=no`)
+    var myVar = {"id" : 1};
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${cityInput}&days=3&aqi=no&alerts=no`,
+    {
+      method:"POST",
+      headers:{
+        "Access-Control-Allow-Origin": "*",
+            "Content-Type": "text/plain",
+      },
+      body: JSON.stringify(myVar)
+    }
+    )
     .then((response) => response.json())
     .then((results) => setWeatherData(results.forecast.forecastday))
   }
